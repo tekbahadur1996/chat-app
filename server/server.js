@@ -26,9 +26,9 @@ io.on('connection', (socket) => {
   //   text: 'helll',
   //   createdAt: 12345666
   // });
-  socket.emit('newMessage1', generateMessage('Admin', 'Welcome to chat app'));
+  socket.emit('newMessage', generateMessage('Admin', 'Welcome to chat app'));
 
-  socket.broadcast.emit('newMessage1', generateMessage('Admin', 'new user joined'));
+  socket.broadcast.emit('newMessage', generateMessage('Admin', 'new user joined'));
 
   socket.on('createMessage', (message, callback) => {
     console.log('createMessage', message);
