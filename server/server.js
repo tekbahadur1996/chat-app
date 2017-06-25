@@ -18,17 +18,17 @@ io.on('connection', (socket) => {
   // socket.emit('newEmail', {
   //   from: 'tek@example.com',
   //   text: "yo yoo",
-  //   createAt: 12334
+  //   createdAt: 12334
   // });
 
   // socket.emit('newMessage', {
   //   from: 'abc@example.com',
   //   text: 'helll',
-  //   createAt: 12345666
+  //   createdAt: 12345666
   // });
-  socket.emit('newMessage', generateMessage('Admin', 'Welcome to chat app'));
+  socket.emit('newMessage1', generateMessage('Admin', 'Welcome to chat app'));
 
-  socket.broadcast.emit('newMessage', generateMessage('Admin', 'new user joined'));
+  socket.broadcast.emit('newMessage1', generateMessage('Admin', 'new user joined'));
 
   socket.on('createMessage', (message, callback) => {
     console.log('createMessage', message);
@@ -38,7 +38,7 @@ io.on('connection', (socket) => {
     // socket.broadcast.emit(('newMessage'), {
     //   from: message.from,
     //   text: message.text,
-    //   createAt: new Date().getTime()
+    //   createdAt: new Date().getTime()
     // });
   });
 
